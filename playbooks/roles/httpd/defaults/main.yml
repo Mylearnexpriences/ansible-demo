@@ -1,0 +1,4 @@
+---
+# defaults file for httpd
+ server:
+  port: 8080

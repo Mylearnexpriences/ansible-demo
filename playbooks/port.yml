@@ -1,0 +1,10 @@
+---
+- hosts: 192.168.32.129
+  roles:
+   - httpd
+  tasks:
+   - name: install git
+     package: name=git state=present
+   - name: clone repo
+     git: repo=https://github.com/demoglot/html-samples-food.git dest=/var/www/html
+   

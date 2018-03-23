@@ -1,0 +1,11 @@
+---
+# tasks file for food
+- name: installing package using loop
+  package: name={{ item }} state=present
+  with_items:
+     - httpd
+     - git
+- name: cloning git repo
+  git: repo=https://github.com/demoglot/html-samples-food.git dest=/var/www/html
+- name: starting service
+  service: name=httpd state=started
